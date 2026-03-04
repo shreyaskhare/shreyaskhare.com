@@ -1,8 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: shreyaskhare/shreyaskhare.com
   branch: main
-
-local_backend: false
 
 media_folder: "assets/img"
 public_folder: "/assets/img"
