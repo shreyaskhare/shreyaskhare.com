@@ -220,3 +220,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 0 30
 @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.hero-kpi{grid-template-columns:repeat(2,1fr)}.hfb-left,.hfb-right{display:none}section{padding:60px 0}.footer-top{flex-direction:column;align-items:flex-start}}
 @media(max-width:480px){.hero-btns{flex-direction:column}.btn-primary,.btn-secondary{justify-content:center}}
 
+.admin-only{display:none!important}
+body.admin-mode .admin-only{display:flex!important}
+body.admin-mode #feedAddBtn{display:flex!important}
+body.admin-mode #addMediaBtn{display:block!important}
+
