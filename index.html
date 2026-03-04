@@ -461,21 +461,22 @@
     <div class="modal-emoji">&#128196;</div>
     <h2 class="modal-title">Download My Resume</h2>
     <p class="modal-sub">Share a few details — only genuine requests get through.</p>
-    <form class="modal-form" onsubmit="handleResume(event)">
-      <input class="form-ctrl" type="text" placeholder="Full Name *" required/>
-      <input class="form-ctrl" type="email" placeholder="Work Email *" required/>
-      <input class="form-ctrl" type="text" placeholder="Company / Organization *" required/>
-      <input class="form-ctrl" type="text" placeholder="Your Designation *" required/>
-      <select class="form-ctrl" required>
-        <option value="" disabled selected>Purpose *</option>
-        <option>Hiring / Recruitment</option>
-        <option>Business Collaboration</option>
-        <option>Partnership Opportunity</option>
-        <option>Academic / Research</option>
-        <option>Other</option>
-      </select>
-      <input class="form-ctrl" type="tel" placeholder="Phone (optional)"/>
-      <button type="submit" class="btn-primary" style="width:100%">Access Resume &rarr;</button>
+<form class="modal-form" onsubmit="handleResume(event)">
+  <input class="form-ctrl" type="text" name="name" placeholder="Full Name *" required/>
+  <input class="form-ctrl" type="email" name="email" placeholder="Work Email *" required/>
+  <input class="form-ctrl" type="text" name="company" placeholder="Company / Organization *" required/>
+  <input class="form-ctrl" type="text" name="designation" placeholder="Your Designation *" required/>
+  <select class="form-ctrl" name="purpose" required>
+    <option value="" disabled selected>Purpose *</option>
+    <option>Hiring / Recruitment</option>
+    <option>Business Collaboration</option>
+    <option>Partnership Opportunity</option>
+    <option>Academic / Research</option>
+    <option>Other</option>
+  </select>
+  <input class="form-ctrl" type="tel" name="phone" placeholder="Phone (optional)"/>
+  <button type="submit" class="btn-primary" style="width:100%">Access Resume &rarr;</button>
+
       <p class="modal-note">&#128274; Secure. Used only to filter genuine requests.</p>
     </form>
   </div>
@@ -484,5 +485,6 @@
 <script src="main.js"></script>
 </body>
 </html>
+
 
 
