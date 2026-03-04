@@ -196,3 +196,23 @@ function addMediaSlot(){
   card.scrollIntoView({behavior:'smooth',block:'center'});
 }
 
+
+// Check if coming from admin panel
+if(document.referrer.includes('/admin') || sessionStorage.getItem('adminMode')){
+  document.body.classList.add('admin-mode');
+  sessionStorage.setItem('adminMode','true');
+}
+// Secret admin mode: type 'admin' anywhere on page
+let adminTyped='';
+document.addEventListener('keypress',e=>{
+  adminTyped+=e.key;
+  if(adminTyped.includes('iamshreyask')){
+    document.body.classList.add('admin-mode');
+    sessionStorage.setItem('adminMode','true');
+    showToast('🔐 Admin mode activated');
+    adminTyped='';
+  }
+  if(adminTyped.length>20)adminTyped='';
+});
+
+
