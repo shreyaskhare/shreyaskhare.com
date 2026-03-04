@@ -423,12 +423,13 @@
         <div class="cinfo-row"><div class="cinfo-icon"><i class="fab fa-linkedin"></i></div><div><div class="cinfo-lbl">LinkedIn</div><div class="cinfo-val"><a href="https://linkedin.com/in/iamshreyask" target="_blank">linkedin.com/in/iamshreyask</a></div></div></div>
       </div>
       <div class="reveal-right">
-        <form class="contact-form" onsubmit="submitContact(event)">
-          <input class="form-ctrl" type="text" placeholder="Your Name *" required/>
-          <input class="form-ctrl" type="email" placeholder="Your Email *" required/>
-          <input class="form-ctrl" type="text" placeholder="Company"/>
-          <input class="form-ctrl" type="text" placeholder="Subject"/>
-          <textarea class="form-ctrl" style="min-height:130px;resize:vertical" placeholder="Your message..."></textarea>
+       <form class="contact-form" onsubmit="submitContact(event)">
+  <input class="form-ctrl" type="text" name="name" placeholder="Your Name *" required/>
+  <input class="form-ctrl" type="email" name="email" placeholder="Your Email *" required/>
+  <input class="form-ctrl" type="text" name="company" placeholder="Company"/>
+  <input class="form-ctrl" type="text" name="subject" placeholder="Subject"/>
+  <textarea class="form-ctrl" name="message" style="min-height:130px;resize:vertical" placeholder="Your message..."></textarea>
+
           <button type="submit" class="btn-primary" style="width:100%">Send Message <i class="fas fa-paper-plane" style="margin-left:6px"></i></button>
         </form>
       </div>
@@ -483,4 +484,5 @@
 <script src="main.js"></script>
 </body>
 </html>
+
 
