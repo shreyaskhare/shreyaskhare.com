@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  // Handle Netlify Identity redirects
+  if (window.location.hash) {
+    var hash = window.location.hash;
+    if (hash.includes('invite_token') || hash.includes('recovery_token') || hash.includes('confirmation_token')) {
+      window.location.href = '/admin/' + hash;
+    }
+  }
+</script>
+
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Shreyas Khare | Strategic Partnerships Leader | BNPL · Co-branded Cards · Fintech · India</title>
@@ -485,6 +495,7 @@
 <script src="main.js"></script>
 </body>
 </html>
+
 
 
 
