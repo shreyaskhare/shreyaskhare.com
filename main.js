@@ -82,20 +82,48 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeResumeModal();}
 function handleResume(e){
   e.preventDefault();
   const btn=e.target.querySelector('button[type="submit"]');
-  if(btn){btn.textContent='Verified! Preparing...';btn.disabled=true;}
-  setTimeout(()=>{
-    closeResumeModal();
-    // Uncomment below line after adding your PDF to assets/resume/
-    // window.open('assets/resume/Shreyas-Khare-Resume.pdf','_blank');
-    showToast('Request verified! Resume link sent to your email. Thank you!');
-  },1500);
+  if(btn){btn.textContent='Verifying...';btn.disabled=true;}
+  const data=new FormData(e.target);
+  fetch('https://formspree.io/f/mlgwqwgq',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+  .then(r=>{
+    if(r.ok){
+      closeResumeModal();
+      window.open('assets/resume/Shreyas-Khare-Resume.pdf','_blank');
+      showToast('✅ Access granted! Resume opening now.');
+    } else {
+      showToast('Something went wrong. Please email shreyasnkhare@gmail.com');
+      if(btn){btn.textContent='Access Resume →';btn.disabled=false;}
+    }
+  })
+  .catch(()=>{
+    showToast('Network error. Please email shreyasnkhare@gmail.com');
+    if(btn){btn.textContent='Access Resume →';btn.disabled=false;}
+  });
 }
+
 
 function submitContact(e){
   e.preventDefault();
-  showToast('Message sent! Shreyas will get back to you soon.');
-  e.target.reset();
+  const btn=e.target.querySelector('button[type="submit"]');
+  if(btn){btn.textContent='Sending...';btn.disabled=true;}
+  const data=new FormData(e.target);
+  fetch('https://formspree.io/f/mzdanaeb',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+  .then(r=>{
+    if(r.ok){
+      showToast('✅ Message sent! Shreyas will reply soon.');
+      e.target.reset();
+      if(btn){btn.textContent='Send Message';btn.disabled=false;}
+    } else {
+      showToast('Something went wrong. Please email shreyasnkhare@gmail.com');
+      if(btn){btn.textContent='Send Message';btn.disabled=false;}
+    }
+  })
+  .catch(()=>{
+    showToast('Network error. Please email shreyasnkhare@gmail.com');
+    if(btn){btn.textContent='Send Message';btn.disabled=false;}
+  });
 }
+
 
 function showToast(msg){
   const t=document.createElement('div');
@@ -167,3 +195,4 @@ function addMediaSlot(){
   grid.appendChild(card);
   card.scrollIntoView({behavior:'smooth',block:'center'});
 }
+
