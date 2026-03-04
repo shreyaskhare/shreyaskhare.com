@@ -1,11 +1,8 @@
 backend:
   name: git-gateway
   branch: main
-  identity_url: https://shreyaskhare.com/.netlify/identity
-  gateway_url: https://shreyaskhare.com/.netlify/git
-  squash_merges: true
 
-locale: 'en'
+local_backend: false
 
 media_folder: "assets/img"
 public_folder: "/assets/img"
