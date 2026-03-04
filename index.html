@@ -354,11 +354,12 @@
         <p class="feed-excerpt">How consumer tech brands are democratizing device access through structured EMI programs and no-cost financing options across retail &amp; digital channels in India...</p>
         <div class="feed-footer"><i class="fas fa-newspaper"></i> Industry Feature &bull; 2026</div>
       </article>
-      <div class="feed-add-card reveal" onclick="showFeedForm()">
-        <i class="fas fa-plus-circle"></i>
-        <strong>Add Post / Article / Link</strong>
-        <span>LinkedIn post, news article, blog or any update</span>
-      </div>
+    <div class="feed-add-card reveal" id="feedAddBtn" onclick="showFeedForm()" style="display:none">
+  <i class="fas fa-plus-circle"></i>
+  <strong>Add Post / Article / Link</strong>
+  <span>LinkedIn post, news article, blog or any update</span>
+</div>
+
     </div>
     <div class="feed-form-wrap" id="feedFormWrap" style="display:none">
       <h3 class="feed-form-title">Add New Content</h3>
@@ -386,7 +387,7 @@
           <iframe id="fr1" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen allow="autoplay;encrypted-media"></iframe>
         </div>
         <div class="media-info"><div class="media-card-title">Video Slot 1</div></div>
-        <div class="media-url-row">
+        <div class="media-url-row admin-only" style="display:none">
           <input class="media-url-inp" type="url" id="u1" placeholder="Paste YouTube / Vimeo URL..."/>
           <button class="media-load-btn" onclick="loadMedia('fr1','ph1','u1')">Load</button>
         </div>
@@ -397,7 +398,7 @@
           <img id="fr2" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover" alt="Shreyas Khare"/>
         </div>
         <div class="media-info"><div class="media-card-title">Image Slot</div></div>
-        <div class="media-url-row">
+        <div class="media-url-row admin-only" style="display:none">
           <input class="media-url-inp" type="url" id="u2" placeholder="Paste image URL..."/>
           <button class="media-load-btn" onclick="loadImg('fr2','ph2','u2')">Load</button>
         </div>
@@ -408,15 +409,16 @@
           <iframe id="fr3" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="media-info"><div class="media-card-title">Location / Maps</div></div>
-        <div class="media-url-row">
+        <div class="media-url-row admin-only" style="display:none">
           <input class="media-url-inp" type="url" id="u3" placeholder="Paste Google Maps embed URL..."/>
           <button class="media-load-btn" onclick="loadMedia('fr3','ph3','u3')">Load</button>
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:2rem">
-      <button class="btn-secondary" onclick="addMediaSlot()"><i class="fas fa-plus"></i> Add More Media</button>
-    </div>
+    <div style="text-align:center;margin-top:2rem" id="addMediaBtn" style="display:none">
+  <button class="btn-secondary" onclick="addMediaSlot()"><i class="fas fa-plus"></i> Add More Media</button>
+</div>
+
   </div>
 </section>
 
@@ -460,7 +462,7 @@
         <a href="tel:+918007008695"><i class="fas fa-phone"></i></a>
       </div>
     </div>
-    <div class="footer-copy">&copy; 2026 Shreyas Khare &bull; Strategic Partnerships &amp; Alliances Leader &bull; shreyaskhare.com</div>
+    <div class="footer-copy">&copy; 2026 Shreyas Khare &bull; Strategic Partnerships &amp; Alliances Leader &bull; shreyaskhare.com <span style="opacity:0;font-size:0.01px"><a href="/admin" style="color:transparent">admin</a></span></div>
     <div class="seo-layer" aria-hidden="true">Shreyas Khare Strategic Partnerships Leader India BNPL Expert Co-branded Credit Card Specialist EMI Ecosystem Fintech OnePlus Tira Beauty Reliance FirstCry Tata Croma Google Amazon Meta Microsoft JP Morgan Goldman Sachs ICICI HDFC Axis SBI Kotak Deloitte McKinsey BCG Accenture KPMG EY PwC Visa Mastercard Razorpay PhonePe Paytm Flipkart Tata Group Walmart MBA PUMBA Pune Bengaluru Karnataka 2026</div>
   </div>
 </footer>
@@ -495,6 +497,7 @@
 <script src="main.js"></script>
 </body>
 </html>
+
 
 
 
